@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDb = require('./config/db_config');
-
+const pageRoutes = require('./routes/pageRoutes/pageRoutes');
 
 dotenv.config();
 
@@ -18,10 +18,7 @@ app.set('view engine', 'ejs');
 
 
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
+app.use("/" , pageRoutes);
 
 
 app.listen(process.env.PORT, () => {
