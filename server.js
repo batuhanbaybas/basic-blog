@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDb = require('./config/db_config');
 const pageRoutes = require('./routes/pageRoutes/pageRoutes');
-
+const blogRoutes = require('./routes/blogRoutes/blogRoutes');
 dotenv.config();
 
 const app = express();
@@ -16,10 +16,8 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 
-
-
-app.use("/" , pageRoutes);
-
+app.use("/", pageRoutes);
+app.use("/api/v1/", blogRoutes);
 
 
 app.listen(process.env.PORT, () => {

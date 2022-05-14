@@ -1,5 +1,3 @@
-import {getAllBlogs} from "../../controllers/blogControllers/blogController";
-
 const express = require("express")
 const blogController = require("../../controllers/blogControllers/blogController")
 
@@ -13,4 +11,4 @@ exports.deletePost = router.delete("/post/:id/delete", blogController.deleteBlog
 exports.createPost = router.post("/post/new", blogController.createBlog)
 
 
-export default router
+module.exports = router
