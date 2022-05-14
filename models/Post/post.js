@@ -4,13 +4,18 @@ const mongoose = require("mongoose")
 const postSchema = mongoose.Schema({
     title: {
         type: String,
-        required: true
+
+
+    },
+    subtitle: {
+        type: String,
+
     },
     content: {
         type: String,
-        required: true
+
     },
-    timesnap: {
+    createDate: {
         type: Date,
         default: Date.now
     },
