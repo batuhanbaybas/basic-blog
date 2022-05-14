@@ -21,6 +21,7 @@ app.set('view engine', 'ejs');
 app.use("/" , pageRoutes);
 
 
+
 app.listen(process.env.PORT, () => {
     connectDb()
     console.log(`Example app listening on port ${process.env.PORT} !`);
