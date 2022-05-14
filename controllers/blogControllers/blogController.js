@@ -33,7 +33,13 @@ exports.deleteBlog = (req, res) => {
       });
     });
 }
-
+exports.getSinglePost =async (req,res) =>{
+    const {id} = req.params;
+    const post = await Post.findById({_id:id})
+    res.status(200).render("post",{
+        post
+    })
+}
 
 
 
