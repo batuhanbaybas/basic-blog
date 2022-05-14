@@ -24,7 +24,7 @@ exports.getSingleBlog = async (req,res)=> {
 exports.createBlog = (req, res) => {
     Post.create(req.body).then(blog => {
       res.status(201).json({
-        blog: blog
+        blog
       });
     }).catch(err => {
       res.status(500).json({
