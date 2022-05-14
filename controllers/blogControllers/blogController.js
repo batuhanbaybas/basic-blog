@@ -3,7 +3,6 @@ const Post = require("../../models/Post/post")
 
 
 exports.createBlog = async (req, res) => {
-    console.log(req.body)
    await Post.create(req.body)
     res.status(201).redirect("/")
 }
