@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 
 
 app.use("/", pageRoutes);
-app.use("/api/v1/", blogRoutes);
+app.use("/post", blogRoutes);
 
 
 app.listen(process.env.PORT, () => {
