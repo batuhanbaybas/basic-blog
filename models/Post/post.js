@@ -12,7 +12,7 @@ const postSchema = mongoose.Schema({
     },
     timesnap: {
         type: Date,
-        default: Date.now()
+        default: Date.now
     },
 })
 

@@ -1,37 +1,25 @@
 
 const Post = require("../../models/Post/post")
 
-exports.getAllBlogs = (req, res) => {
-  Post.find()
-    .then(blogs => {
-      res.status(200).json({
-        blogs: blogs
-      });
-    })
-    .catch(err => {
-      res.status(500).json({
-        error: err
-      });
-    });
-};
-exports.getSingleBlog = (req, res) => {
-    const {id} = req.params;
-  Post.findById(id)
-    .then(blog => {
-      if (!blog) {
-        return res.status(404).json({
-          message: "Blog not found"
-        });
-      }
-      res.status(200).json({
-        blog: blog
-      });
-    })
-    .catch(err => {
-      res.status(500).json({
-        error: err
-      });
-    });
+exports.getAllBlogs =async (req,res)=> {
+    try{
+       const posts = await Post.find()
+       res.status(200).render("index",{
+           posts
+        })
+    }catch (e) {
+        console.log(e)
+    }
+}
+exports.getSingleBlog = async (req,res)=> {
+    try{
+        const post = await Post.findById(req.params.id)
+        res.status(200).render("post",{
+            post
+        })
+    }catch (e) {
+        console.log(e)
+    }
 }
 exports.createBlog = (req, res) => {
     Post.create(req.body).then(blog => {
