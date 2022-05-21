@@ -11,7 +11,7 @@ Simple blog app with Node.js and [Express](https://expressjs.com/).
 - [Docker-compose](https://docs.docker.com/compose/install/)
 - [Ejs](https://www.npmjs.com/package/ejs)
 - [Monggose](https://www.npmjs.com/package/mongoose)
-- [Meyhod-override](https://www.npmjs.com/package/method-override)
+- [Method-override](https://www.npmjs.com/package/method-override)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 
